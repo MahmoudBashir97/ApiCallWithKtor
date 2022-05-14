@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/view_pager"/>
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/dot1"
+        android:layout_marginTop="10dp"
+        app:dotsColor="@android:color/holo_green_light"
+        app:selectedDotColor="@android:color/holo_green_dark"
+        app:dotsSize="15dp"
+        app:dotsSpacing="5dp"
+        app:progressMode="true"
+        android:visibility="gone"/>
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dot2"
+        android:layout_marginTop="10dp"
+        app:dotsColor="@android:color/holo_red_dark"
+        app:selectedDotColor="@android:color/holo_orange_dark"
+        app:dotsSize="15dp"
+        app:dotsSpacing="5dp"
+        app:stiffness="300"
+        />
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dot3"
+        android:layout_marginTop="10dp"
+        app:dotsColor="@android:color/holo_blue_light"
+        app:selectedDotColor="@android:color/holo_blue_dark"
+        app:dotsSize="15dp"
+        app:dotsSpacing="5dp"
+        android:visibility="gone"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
